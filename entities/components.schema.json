@@ -1492,6 +1492,10 @@
                 }
             }
         },
+        "minecraft:instant_despawn": {
+            "type": "object",
+            "description": "Instantly despawns the entity."
+        },
         "minecraft:interact": {
             "type": "object",
             "description": "Defines interactions with this entity.",
