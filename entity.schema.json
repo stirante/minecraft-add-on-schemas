@@ -27,19 +27,47 @@
                     "properties": {
                         "identifier": {
                             "type": "string",
-                            "description": "ID used to reference and summon entity"
+                            "description": "ID used to reference and summon entity."
                         },
                         "is_spawnable": {
                             "type": "boolean",
-                            "default": true
+                            "default": true,
+                            "description": "Set to determine if this entity has a spawn egg."
                         },
                         "is_summonable": {
                             "type": "boolean",
-                            "default": true
+                            "default": true,
+                            "description": "Flag to mark this entity as being summonable or not."
                         },
                         "is_experimental": {
                             "type": "boolean",
                             "default": false
+                        },
+                        "runtime_identifier": {
+                            "type": "string",
+                            "description": "The identifier for the class to construct this entity with."
+                        },
+                        "animations": {
+                            "type": "object",
+                            "description": "Mapping of animations or animation controllers, where key is the name internal to the entity and the value is actual animation or animation controller name.",
+                            "patternProperties": {
+                                "^.+$": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "scripts": {
+                            "type": "object",
+                            "properties": {
+                                "animate": {
+                                    "type": "array",
+                                    "description": "A list of animations and animation controllers to run.",
+                                    "items": {
+                                        "type": "string",
+                                        "description": "Internal to the entity name of animation or animation controller."
+                                    }
+                                }
+                            }
                         }
                     },
                     "default": {
