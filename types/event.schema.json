@@ -5,6 +5,23 @@
         { "$ref": "#/definitions/add-remove" },
         {
             "properties": {
+                "sequence": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "filters": {
+                                "$ref": "../types/filters.schema.json"
+                            },
+                            "add": {
+                                "$ref": "#/definitions/add"
+                            },
+                            "remove": {
+                                "$ref": "#/definitions/remove"
+                            }
+                        }
+                    }
+                },
                 "randomize": {
                     "type": "array",
                     "items": {
