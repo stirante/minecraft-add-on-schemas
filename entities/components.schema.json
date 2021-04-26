@@ -558,11 +558,27 @@
             "type": "object",
             "description": "Fires off a specified event when a block in the block list is broken within the sensor range.",
             "properties": {
-                "Decimal": {
-                    "description": "sensor_radius"
+                "sensor_radius": {
+                    "type": "number"
                 },
-                "List": {
-                    "description": "on_break"
+                "on_break": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "block_list": {
+                                "description": "List of block types, to which this sensor reacts.",
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            },
+                            "on_block_broken": {
+                                "description": "Event to trigger on block break.",
+                                "type": "string"
+                            }
+                        }
+                    }
                 }
             }
         },
